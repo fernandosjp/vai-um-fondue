@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Calculadora de Fondue</title>
+    <title>Vai um fondue?</title>
 
     <!-- Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
   <body>
-    <h1>Calculadora de Fondue</h1>
+    <h1>Vai um fondue?</h1>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -42,26 +42,19 @@
                 
                 // Montar lista
                 lista_template="\
-<br />\
-Queijo Gruyère "+ String(gruyere_tot) + " gramas <br />\
-Queijo Emmental " + String(emmental_tot)  + "gramas <br />\
-Pão Italiano " + String(pao_tot)  + " gramas <br />\
-Vinho Branco Fondue " + String(garrafas_vinho_fondue) + " garrafa(s) - " + String(vinho_branco_fondue_tot) + " ml <br />\
-Vinho para beber " + String(garrafas_vinho_beber) + " garrafa(s) - " + String(vinho_para_beber_tot) + " ml <br />\
-<br />\
-Lembrando: São 3 colheres de amido de milho por panela<br />\
-Noz moscada ralada na hora a gosto.<br />\
-"
-/*
-                lista=lista_template.format(
-                    gruyere_tot,
-                    emmental_tot,
-                    pao_tot,
-                    garrafas_vinho_fondue,
-                    vinho_branco_fondue_tot,
-                    garrafas_vinho_beber,
-                    vinho_para_beber_tot)
-*/
+                    <h3>Lista de compras:</h3>
+                    <br />\
+                    <p>\
+                    Queijo Gruyère "+ String(gruyere_tot) + " gramas <br />\
+                    Queijo Emmental " + String(emmental_tot)  + "gramas <br />\
+                    Pão Italiano " + String(pao_tot)  + " gramas <br />\
+                    Vinho Branco Fondue " + String(garrafas_vinho_fondue) + " garrafa(s) - " + String(vinho_branco_fondue_tot) + " ml <br />\
+                    Vinho para beber " + String(garrafas_vinho_beber) + " garrafa(s) - " + String(vinho_para_beber_tot) + " ml <br />\
+                    <br />\
+                    Lembrando: São 3 colheres de amido de milho por panela<br />\
+                    Noz moscada ralada na hora a gosto.<br />\
+                    </p>"
+
                 document.getElementById("result").innerHTML = lista_template;
         }
     </script>
@@ -71,9 +64,8 @@ Noz moscada ralada na hora a gosto.<br />\
         <input type="text" id="nr_pessoas" /><br>
         <input type="button" onClick="calcular_lista()" Value="Gerar lista" />
     </form>
-    <h3>Lista de compras:</h3>
-    <p>
     <span id = "result"></span>
-    </p>
+
+    <i>Desenvolvido por Rafaela Vitale e Fernando Paiva</i>
   </body>
 </html>
