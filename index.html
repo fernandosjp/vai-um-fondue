@@ -9,14 +9,7 @@
     <title>Calculadora de Fondue</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
   <body>
     <h1>Calculadora de Fondue</h1>
@@ -24,21 +17,62 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
     <script>
         function calcular_lista()
-        {
+        {              
                 nr_pessoas = document.getElementById("nr_pessoas").value;
-                document.getElementById("result").innerHTML = nr_pessoas_
+
+                // Quantidade de ingredientes por pessoa
+                var gruyere=75
+                var emmental=75
+                var pao=190
+                var vinho_branco_fondue=75
+                var vinho_para_beber=350
+
+                // Calcular a quantidade total de ingredientes
+                var gruyere_tot=gruyere*nr_pessoas
+                var emmental_tot=emmental*nr_pessoas
+                var pao_tot=pao*nr_pessoas
+                var vinho_branco_fondue_tot=vinho_branco_fondue*nr_pessoas
+                var vinho_para_beber_tot=vinho_para_beber*nr_pessoas
+                
+                // Ajustar as unidades
+                var garrafas_vinho_fondue=Math.ceil(vinho_branco_fondue_tot/750)
+                var garrafas_vinho_beber=Math.ceil(vinho_para_beber_tot/750)
+                
+                // Montar lista
+                lista_template="\
+<br />\
+Queijo Gruyère "+ String(gruyere_tot) + " gramas <br />\
+Queijo Emmental " + String(emmental_tot)  + "gramas <br />\
+Pão Italiano " + String(pao_tot)  + " gramas <br />\
+Vinho Branco Fondue " + String(garrafas_vinho_fondue) + " garrafa(s) - " + String(vinho_branco_fondue_tot) + " ml <br />\
+Vinho para beber " + String(garrafas_vinho_beber) + " garrafa(s) - " + String(vinho_para_beber_tot) + " ml <br />\
+<br />\
+Lembrando: São 3 colheres de amido de milho por panela<br />\
+Noz moscada ralada na hora a gosto.<br />\
+"
+/*
+                lista=lista_template.format(
+                    gruyere_tot,
+                    emmental_tot,
+                    pao_tot,
+                    garrafas_vinho_fondue,
+                    vinho_branco_fondue_tot,
+                    garrafas_vinho_beber,
+                    vinho_para_beber_tot)
+*/
+                document.getElementById("result").innerHTML = lista_template;
         }
     </script>
 
     <form>
         Quantas pessoas vão participar do fundue de queijo hoje?
-        <input type="text" id="nr_pessoas" onCLick="calcular_list()"/><br>
+        <input type="text" id="nr_pessoas" /><br>
         <input type="button" onClick="calcular_lista()" Value="Gerar lista" />
     </form>
-    <p>Lista de compras: <br>
+    <h3>Lista de compras:</h3>
+    <p>
     <span id = "result"></span>
     </p>
   </body>
