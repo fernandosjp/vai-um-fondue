@@ -15,66 +15,30 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">
-            <h1>Vai um fondue?</h1>
-          </a>
+            <a class="navbar-brand" href="#">
+                <img alt="Brand" height="25" src="img/cheese.png">
+            </a>
+            <p class="navbar-text">Vai um fondue?</p>
         </div>
       </div>
     </nav>
-
-    <script>
-        function calcular_lista()
-        {              
-                nr_pessoas = document.getElementById("nr_pessoas").value;
-
-                // Quantidade de ingredientes por pessoa
-                var gruyere=75
-                var emmental=75
-                var pao=190
-                var vinho_branco_fondue=75
-                var vinho_para_beber=350
-
-                // Calcular a quantidade total de ingredientes
-                var gruyere_tot=gruyere*nr_pessoas
-                var emmental_tot=emmental*nr_pessoas
-                var pao_tot=pao*nr_pessoas
-                var vinho_branco_fondue_tot=vinho_branco_fondue*nr_pessoas
-                var vinho_para_beber_tot=vinho_para_beber*nr_pessoas
-                
-                // Ajustar as unidades
-                var garrafas_vinho_fondue=Math.ceil(vinho_branco_fondue_tot/750)
-                var garrafas_vinho_beber=Math.ceil(vinho_para_beber_tot/750)
-                
-                // Montar lista
-                lista_template="\
-                    <h3>Lista de compras:</h3>\
-                    <br />\
-                    <p>\
-                    <ul>\
-                        <li>Queijo Gruyère "+ String(gruyere_tot) + " gramas</li> <br />\
-                        <li>Queijo Emmental " + String(emmental_tot)  + "gramas</li> <br />\
-                        <li>Pão Italiano " + String(pao_tot)  + " gramas</li> <br />\
-                        <li>Vinho Branco Fondue " + String(garrafas_vinho_fondue) + " garrafa(s) - " + String(vinho_branco_fondue_tot) + " ml</li> <br />\
-                        <li>Vinho para beber " + String(garrafas_vinho_beber) + " garrafa(s) - " + String(vinho_para_beber_tot) + " ml</li> <br />\
-                    </ul>\
-                    <br />\
-                    Lembrando: São 3 colheres de amido de milho por panela<br />\
-                    Noz moscada ralada na hora a gosto.<br />\
-                    </p>"
-
-                document.getElementById("result").innerHTML = lista_template;
-        }
-    </script>
-
-    <form>
-        Quantas pessoas vão participar do fundue de queijo hoje?
-        <input type="text" id="nr_pessoas" /><br>
-        <input type="button" onClick="calcular_lista()" Value="Gerar lista" />
-    </form>
-    <span id = "result"></span>
-
-    <i>Desenvolvido por Rafaela Vitale e Fernando Paiva</i>
-  
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+             <form>
+                 Quantas pessoas vão participar do fundue de queijo hoje?
+                 <div class="input-group">
+                   <input type="text" id="nr_pessoas" class="form-control" aria-label="">
+                   <span class="input-group-addon">pessoas</span>
+                 </div><br>
+                 <input type="button" onClick="calcular_lista()" Value="Gerar lista" />
+             </form>
+             <span id = "result"></span>
+             <br/>
+             <i>Desenvolvido por Rafaela Vitale e Fernando Paiva</i>
+         </div>
+    </div>
+ 
   <link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -86,5 +50,49 @@
     ga('send', 'pageview');
   
   </script>
+  <script>
+      function calcular_lista()
+      {              
+              nr_pessoas = document.getElementById("nr_pessoas").value;
+
+              // Quantidade de ingredientes por pessoa
+              var gruyere=75
+              var emmental=75
+              var pao=190
+              var vinho_branco_fondue=75
+              var vinho_para_beber=350
+
+              // Calcular a quantidade total de ingredientes
+              var gruyere_tot=gruyere*nr_pessoas
+              var emmental_tot=emmental*nr_pessoas
+              var pao_tot=pao*nr_pessoas
+              var vinho_branco_fondue_tot=vinho_branco_fondue*nr_pessoas
+              var vinho_para_beber_tot=vinho_para_beber*nr_pessoas
+              
+              // Ajustar as unidades
+              var garrafas_vinho_fondue=Math.ceil(vinho_branco_fondue_tot/750)
+              var garrafas_vinho_beber=Math.ceil(vinho_para_beber_tot/750)
+              
+              // Montar lista
+              lista_template="\
+                  <h3>Lista de compras:</h3>\
+                  <br />\
+                  <p>\
+                  <ul>\
+                      <li>Queijo Gruyère "+ String(gruyere_tot) + " gramas</li> <br />\
+                      <li>Queijo Emmental " + String(emmental_tot)  + "gramas</li> <br />\
+                      <li>Pão Italiano " + String(pao_tot)  + " gramas</li> <br />\
+                      <li>Vinho Branco Fondue " + String(garrafas_vinho_fondue) + " garrafa(s) - " + String(vinho_branco_fondue_tot) + " ml</li> <br />\
+                      <li>Vinho para beber " + String(garrafas_vinho_beber) + " garrafa(s) - " + String(vinho_para_beber_tot) + " ml</li> <br />\
+                  </ul>\
+                  <br />\
+                  Lembrando: São 3 colheres de amido de milho por panela<br />\
+                  Noz moscada ralada na hora a gosto.<br />\
+                  </p>"
+
+              document.getElementById("result").innerHTML = lista_template;
+      }
+  </script>
+
   </body>
 </html>
