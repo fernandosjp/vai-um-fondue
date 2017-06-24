@@ -1,50 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="author" content="Fernando Paiva e Rafaela Vitale">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Vai um fondue?</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">
-                <img alt="Brand" height="25" src="img/cheese.png">
-            </a>
-            <p class="navbar-text">Vai um fondue?</p>
-        </div>
-      </div>
-    </nav>
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-             <form>
-                 Quantas pessoas vão participar do fundue de queijo hoje?
-                 <div class="input-group">
-                   <input type="text" id="nr_pessoas" class="form-control" aria-label="">
-                   <span class="input-group-addon">pessoas</span>
-                 </div><br>
-                 <input type="button" onClick="calcular_lista()" Value="Gerar lista" />
-             </form>
-             <span id = "result"></span>
-             <br/>
-             <i>Desenvolvido por Rafaela Vitale e Fernando Paiva</i>
-         </div>
-    </div>
- 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script src="js/calcular_lista.js"></script>
+<head>
+  <title>Vai um fondue?</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script type="text/javascript"  src="js/calcular_lista.js" async></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -53,8 +15,145 @@
   
     ga('create', 'UA-100783066-1', 'auto');
     ga('send', 'pageview');
-  
   </script>
+  <style>
+    .container-fluid {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    }
+    .bg-1 { 
+       background-color: #A9A9A9; /* Gray */
+        color: #ffffff;
+    }
+    .bg-2 { 
+      background-color: #474e5d; /* Dark Blue */
+      color: #ffffff;
+    }
+    .bg-3 { 
+      background-color: #ffffff; /* White */
+      color: #555555;
+    }
+    .bg-4 { 
+    background-color: #2f2f2f;
+    color: #ffffff;
+    }
+    .navbar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 3px;
+    }
+    .navbar-nav li a:hover {
+    color: #1abc9c !important;
+    }
+    .navbar-brand{
+    font-size: 27px;
+    letter-spacing: 3px;
+    }
+    .first-h3 {
+    margin:0px;
+    }
+    .img-main{
+    margin:40px;
+    width:128px;
+    height:128px;
+    }
+    .shopping-list{
+    font-size: 16px;
+    text-align: left;
+    }
+    body {
+    font: 20px "Montserrat", sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+    }
+    h3{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    }
+    p {
+    font-size: 16px;
+    }
+    img {
+    color:#FFFFFF
+    }
+    footer p{
+    font-size: 14px;
+    }
 
-  </body>
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+    <!--
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+     -->
+      <a class="navbar-brand" href="#">Vai um fondue?</a>
+    </div>
+    <!--
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">WHO</a></li>
+        <li><a href="#">WHAT</a></li>
+        <li><a href="#">WHERE</a></li>
+      </ul>
+    </div>
+    -->
+  </div>
+</nav>
+
+<div class="container-fluid bg-1 text-center">
+  <h3 class="first-h3">Quantas pessoas vão participar do fondue hoje?</h3>
+  <img src="img/cheese.png" class="img-responsive img-main" style="display:inline" alt="Fondue">
+    <form class="form-inline">
+    <div class="input-group">
+      <input type="number" id="nr_people" class="form-control" size="30" placeholder="Número de pessoas" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-warning" onClick="calcular_lista()"><span class="glyphicon glyphicon-shopping-cart"></span> Gerar lista</button>
+      </div>
+    </div>
+    </form>
+</div>
+
+<div class="container-fluid bg-2 text-center">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+    	<h3>Lista de compras:</h3>
+    	<span id="result" class="shopping-list">
+          Esperando saber o número de pessoas
+        </span>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+</div>
+
+<div class="container-fluid bg-3 text-center">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <h3>O projeto</h3>
+      <p>Vai um fondue? é um projeto iniciado durante o evento do grupo Pyladies de introdução à Python* para casais.</p>
+      <p>O site ajuda a gerar a lista de compras para fazer um fondue de queijo (de verdade) com a galera! Aproveitem!</p>
+      <p><i>*E posteriormente traduzido para Javascript para site estático</i></p>
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+</div>
+
+
+</body>
+<footer class="container-fluid bg-4 text-center">
+  <p><i>Desenvolvido por Rafaela Vitale e Fernando Paiva usando o tema Bootstrap feito por <a href="https://www.w3schools.com">www.w3schools.com</a></i></p> 
+</footer>
 </html>
