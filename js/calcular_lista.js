@@ -45,6 +45,9 @@ function calcular_lista()
               </div>\
               <div class=\"checkbox\">\
                 <label><input type=\"checkbox\">Noz moscada a gosto</label>\
+              </div>
+              <div class=\"checkbox\">\
+                <label><input type=\"checkbox\">1 dente de alho</label>\
               </div>"
 
         document.getElementById("result").innerHTML = lista_template;
