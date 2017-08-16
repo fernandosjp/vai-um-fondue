@@ -1,2 +1,10 @@
-gems:
+title: Vai um fondue?
+email: fernandosjp@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  A tradicional receita de um fondue de queijo. O site Vai um fondue? ajuda a gerar a lista de compras para fazer um fondue de queijo (de verdade) com a galera! Aproveitem!
+baseurl: "" # the subpath of your site, e.g. /blog
+
+url: "http://vaiumfondue.com.br" # the base hostname & protocol for your site
+
+plugins:
   - jekyll-seo-tag
